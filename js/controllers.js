@@ -1,3 +1,5 @@
+var baseUrl = "https://arthur-eudeline.github.io/git-cs2i";
+
 app.controller('AppCtrl', function($scope, $rootScope, content) {
   content.getPagesStructure();
 });
@@ -13,7 +15,7 @@ app.controller('CheatSheetController', function($scope, $http) {
     $scope.$broadcast('loading.start');
     $http({
       method: "GET",
-      url: window.location.origin + "/data/commands.json"
+      url: baseUrl + "/data/commands.json"
     }).then(
       function( response ) {
         $scope.content = response.data;
@@ -61,7 +63,7 @@ app.service('content', function($rootScope, $filter, $http){
   this.getPagesStructure = function(){
     return $http({
       method: "GET",
-      url: window.location.origin + "/data/page-structure.json"
+      url: baseUrl + "/data/page-structure.json"
     }).then(
       function( response ) {
         if (response.data.length > 0) {
@@ -106,7 +108,7 @@ app.service('content', function($rootScope, $filter, $http){
     if ( pageId ){
       return $http({
         method: "GET",
-        url: window.location.origin + "/data/learn/"+ pageId +".md"
+        url: baseUrl + "/data/learn/"+ pageId +".md"
       });
     }
   }
