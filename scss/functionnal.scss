@@ -1,0 +1,31 @@
+$padding: 15px !default;
+$border-radius: 3px !default;
+$box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2) !default;
+$margin: 15px !default;
+
+/* Fonts */
+.poppins{ font-family: 'Poppins', sans-serif; }
+.nunito{ font-family: 'Nunito', sans-serif; }
+code{ font-family: monospace !important; }
+
+/* Padding */
+.padding{ padding: $padding; }
+.padding-vertical{ padding: $padding 0; }
+.padding-horizontal{ padding: 0 $padding; }
+.paddint-top{ padding-top: $padding; }
+.paddint-bottom{ padding-bottom: $padding; }
+.paddint-left{ padding-left: $padding; }
+.paddint-right{ padding-right: $padding; }
+
+.padding-large{ padding: $padding*2; }
+.padding-vertical-large{ padding: $padding*2 0; }
+.padding-horizontal-large{ padding: 0 $padding*2; }
+.paddint-top-large{ padding-top: $padding*2; }
+.paddint-bottom-large{ padding-bottom: $padding*2; }
+.paddint-left-large{ padding-left: $padding*2; }
+.paddint-right-large{ padding-right: $padding*2; }
+
+.margin-vertical{ margin-top: $margin; margin-bottom: $margin; }
+
+.rounded{ border-radius: $border-radius; }
+.box-shadow{ box-shadow: $box-shadow; }

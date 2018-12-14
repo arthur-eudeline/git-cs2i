@@ -1,0 +1,32 @@
+[
+  {
+    "pageName": "Apprendre Git",
+    "pageId"  : "learn",
+    "subPages" : [
+      {
+        "pageName"  : "Introduction",
+        "template"  : "introduction"
+      },
+      {
+        "pageName" : "Installer Git sur votre machine",
+        "template"  : "installer-git"
+      },
+      {
+        "pageName" : "Initialiser Git dans vos projets",
+        "template"  : "initialiser-git"
+      },
+      {
+        "pageName" : "Les notions de base de Git",
+        "template"  : "notions-base-git"
+      },
+      {
+        "pageName"  : "Interagir avec un dépôt Git",
+        "template"  : "interagir-depot-git"
+      },
+      {
+        "pageName"  : "Les commandes Git de bases",
+        "template"  : "commande-base-git"
+      }
+    ]
+  }
+]

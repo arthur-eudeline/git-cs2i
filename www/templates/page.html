@@ -1,0 +1,47 @@
+<ion-view view-title="{{ viewTitle }}">
+
+  <!-- Header -->
+  <ion-nav-bar class="bar-dark">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+
+    <ion-nav-buttons side="left">
+      <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+      </button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <!-- /Header -->
+
+  <!-- Content -->
+  <ion-content>
+
+    <div class="container text-center">
+      <div class="row">
+
+        <!-- Sommaire -->
+        <div class="col-xs-12 col-md-6 col-md-offset-3 padding-vertical" ng-show="currentPageStructure && !content">
+
+          <div class="card" ng-repeat="page in currentPageStructure.subPages" ui-sref="app.learn({pageTemplateName : page.template })">
+            <div class="item text-left item-icon-right item-text-wrap">
+              {{ page.pageName }}
+              <i class="icon ion-arrow-right-b"></i>
+            </div>
+          </div>
+
+        </div>
+        <!-- Sommaire -->
+
+        <!-- Contenu -->
+        <div class="col-xs-12 col-md-6 col-md-offset-3 padding-vertical" ng-if="!currentPageStructure && content">
+          <div class="item text-left item-text-wrap" ng-bind-html="content | Markdown">
+          </div>
+        </div>
+        <!-- Contenu -->
+
+      </div>
+    </div>
+
+  </ion-content>
+  <!-- /Content -->
+
+</ion-view>

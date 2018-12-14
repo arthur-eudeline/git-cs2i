@@ -1,0 +1,210 @@
+[
+  {
+    "id": "initialiser-un-projet",
+    "title": "Initialiser un projet",
+    "commands": [
+
+      {
+        "name" : "git init",
+        "desc" : "Creates a new local repository with the specified name Créer un nouveau répertoire avec le nom spécifié et y initialise Git. Si aucun nom n'est spécifié, Git va simplement s'initialiser sur votre projet à l'instant T de son état.",
+        "url"  : "https://devdocs.io/git/git-init",
+        "args" : [
+          {
+            "name"  : "project-name",
+            "optional"  : true,
+            "desc"  : "Le nom du projet"
+          }
+        ]
+      },
+
+      {
+        "name" : "git clone",
+        "desc" : "Télécharge un dépôt git distant ansi que tout son historique Git dans le répertoire courant",
+        "url" : "https://devdocs.io/git/git-clone",
+        "args" : [
+          {
+            "name"  : "repository-url",
+            "optional"  : false,
+            "desc"  : "L'URL du dépôt Git dont vous voulez copier le contenu."
+          }
+        ]
+      }
+
+    ]
+  },
+
+
+
+  {
+    "id": "sauvegarder-votre-projet",
+    "title": "Sauvegarder votre projet",
+    "commands": [
+
+      {
+        "name" : "git add",
+        "desc" : "Ajoute un fichier à la file d'indexation pour le prochain commit",
+        "url"  : "https://devdocs.io/git/git-add",
+        "args" : [
+          {
+            "name"  : "file-path",
+            "optional"  : false,
+            "desc"  : "Le chemin du fichier à ajouter"
+          }
+        ],
+        "options" : [
+          {
+            "longName"  : "all",
+            "shortName"  : "a",
+            "desc"  : "Ajoute tous les fichiers présents dans le répertoire de travail"
+          }
+        ]
+      },
+
+      {
+        "name" : "git commit",
+        "desc" : "Sauvegarde de façon permanante l'état du projet, consitué des fichiers ajouté par la commande `git add`, à un instant T",
+        "url"  : "https://devdocs.io/git/git-commit",
+        "args" : [],
+        "options" : [
+          {
+            "longName"  : "message",
+            "shortName"  : "m",
+            "desc"  : "Le titre et la description du commit"
+          }
+        ]
+      },
+
+      {
+        "name" : "git reset",
+        "desc" : "Annule tous les commits effectués après le commit désigné par l'ID passé en paramètre, ou désindexe un fichier ajouté par `git add` des changements indéxés pour les prochain commit. `git reset` n'effectue pas de commit, de ce fait tous les changements non-commités sont préservés et peuvent être supprimés par un git reset sur les fichiers.",
+        "url" : "https://devdocs.io/git/git-reset",
+        "args" : [
+          {
+            "name"  : "file-path",
+            "optional"  : true,
+            "desc"  : "Retire un fichier de l'indexation du prochain commit"
+          },
+
+          {
+            "name"  : "commit-id",
+            "optional"  : true,
+            "desc"  : "L'ID du commit sur lequel restaurer le projet"
+          }
+        ],
+        "options" : []
+      },
+
+      {
+        "name" : "git checkout",
+        "desc" : "Récupère une branche du dépôt et la définie en tant que branche active. Permet également de récupérer les fichiers de travail à un certain état.",
+        "url"  : "https://devdocs.io/git/git-checkout",
+        "args" : [
+          {
+            "name"  : "branch-name",
+            "optional"  : false,
+            "desc"  : "Le nom de la branche à définir comme active."
+          }
+        ],
+        "options" : []
+      }
+
+    ]
+  },
+
+
+
+  {
+    "id": "connaitre-l-etat-de-votre-projet",
+    "title": "Connaître l'état votre projet",
+    "commands": [
+
+      {
+        "name" : "git status",
+        "desc" : "Vous informe sur l'état d'indexation des fichiers.",
+        "url" : "https://devdocs.io/git/git-status",
+        "args" : [],
+        "options" : []
+      }
+
+    ]
+  },
+
+
+
+  {
+    "id": "modifier-son-projet",
+    "title": "Effectuer des modifications au sein de son projet",
+    "commands": [
+
+      {
+        "name" : "git rm",
+        "desc" : "Supprime le fichier du répertoire de travail et de l'indexation Git.",
+        "url"  : "https://devdocs.io/git/git-rm",
+        "args" : [
+          {
+            "name"  : "file-path",
+            "optional"  : false,
+            "desc"  : "Le chemin du fichier à supprimer"
+          }
+        ],
+        "options" : []
+      },
+
+      {
+        "name" : "git mv",
+        "url"  : "https://devdocs.io/git/git-mv",
+        "desc" : "Déplace ou renomme un fichier et le prépare pour le commit.",
+        "args" : [
+          {
+            "name"  : "file-path",
+            "optional"  : false,
+            "desc"  : "Le chemin du fichier à supprimer"
+          },
+          {
+            "name"  : "new-file-location",
+            "optional"  : false,
+            "desc"  : "L'emplacement où déplacer le fichier"
+          }
+        ],
+        "options" : []
+      }
+
+    ]
+  },
+
+
+
+  {
+    "id": "synchroniser-son-projet",
+    "title": "Synchroniser son projet",
+    "commands": [
+
+      {
+        "name" : "git remote",
+        "desc" : "Permet de gérer les dépôts distants. C'est avec `git remote` que vous allez pouvoir ajouter un répertoire distant, le supprimer, ...",
+        "url"  : "https://devdocs.io/git/git-remote",
+        "args" : [],
+        "options" : []
+      },
+
+      {
+        "name" : "git pull",
+        "url"  : "https://devdocs.io/git/git-pull",
+        "desc" : "Récupère les changements effectués sur le dépôt distant et les synchronise avec votre copie locale",
+        "args" : [],
+        "options" : []
+      },
+
+      {
+        "name" : "git push",
+        "url"  : "https://devdocs.io/git/git-push",
+        "desc" : "Envoie les changements effectués sur votre copie locale et les synchronise avec le dépôt distant",
+        "args" : [],
+        "options" : []
+      }
+
+    ]
+  }
+
+
+]

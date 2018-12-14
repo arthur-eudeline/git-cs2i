@@ -1,0 +1,63 @@
+<ion-view view-title="{{ viewTitle }}">
+
+  <!-- Header -->
+  <ion-nav-bar class="bar-dark">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+
+    <ion-nav-buttons side="left">
+      <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+      </button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <!-- /Header -->
+
+  <!-- Content -->
+  <ion-content>
+    <loading-spinner icon="android" show-by-default="true"></loading-spinner>
+
+    <div class="container">
+      <div class="row" ng-repeat="section in content">
+        <section class="padding-vertical col-xs-12" >
+          <h2>{{ section.title }}</h2>
+
+          <div class="list card" ng-repeat="command in section.commands">
+            <div class="item item-text-wrap">
+              <h3>{{ command.name }}</h3>
+              <div ng-bind-html="command.desc | Markdown"></div>
+            </div>
+
+            <div class="item item-text-wrap" ng-if="command.args.length > 0">
+              <h4>Paramètres</h4>
+              <ul>
+                <li ng-repeat="arg in command.args">
+                  <h5><code>{{ arg.name }}</code></h5>
+                  <div ng-bind-html="arg.desc | Markdown"></div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="item item-text-wrap" ng-if="command.options.length > 0">
+              <h4>Options</h4>
+              <ul>
+                <li ng-repeat="option in command.options">
+                  <h5><code>--{{ option.longName }}</code> | <code>-{{ option.shortName }}</code></h5>
+                  <div ng-bind-html="option.desc | Markdown"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="item item-text-wrap text-right">
+              <a class="button" href="{{ command.url }}" target="_blank">Voir la docummentation</a>
+            </div>
+          </div>
+
+
+        </section>
+
+      </div>
+    </div>
+
+</ion-content>
+<!-- /Content -->
+
+</ion-view>

@@ -1,0 +1,3 @@
+# Initialiser Git dans vos projets
+
+Bien, maintenant que nous avons installer Git, il faut maintenant apprendre à s'en servir. Pour initialiser Git, ce n'est vraiment pas très compliqué. Que votre dossier de projet soit vide ou contienne déjà des fichiers, il vous suffit dans tous les cas de vous placer dans votre dossier de projet via un terminal et de taper la commande `git init`. Plutôt simple non ? Cependant, à l'heure actuelle, **votre projet n'est versionné qu'en local**, mais plus pour très longtemps...
